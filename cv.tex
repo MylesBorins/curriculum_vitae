@@ -1,0 +1,74 @@
+%% start of file `cv.tex'.
+%% Myles Borins CV ~ Dec 2012
+%%
+%% Adapted from moderncv template.tex
+%% Copyright 2006-2012 Xavier Danaux (xdanaux@gmail.com).
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License version 1.3c,
+% available at http://www.latex-project.org/lppl/.
+
+
+\documentclass[10pt,a4paper,sans]{moderncv}   % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
+
+
+% moderncv themes
+\moderncvstyle{banking}                        % style options are 'casual' (default), 'classic', 'oldstyle' and 'banking'
+\moderncvcolor{black}                          % color options 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
+
+% adjust the page margins
+\usepackage[scale=0.80]{geometry}
+
+% personal data
+\firstname{Myles}
+\familyname{Borins}
+% \address{123 Fake St.}{Stanford, California 94305}
+
+\mobile{+1~(650)~924~7215}
+\email{mborins@ccrma.stanford.edu}
+\homepage{www.thealphanerd.io}
+\extrainfo{www.github.com/thealphanerd}
+
+%----------------------------------------------------------------------------------
+%            content
+%----------------------------------------------------------------------------------
+\begin{document}
+%-----       resume       ---------------------------------------------------------
+\makecvtitle
+
+\section{Education}
+\cventry{2012--Current}{MA/MST}{Stanford University}{Stanford, California}{\textit{Masters of Music Science and Technology}}{Two year masters program at the \textit{Center for Computer Research in Music and Acoustics}.  Studies include human computer interaction design, digital signal processing, computer music composition, and site-based installation art. \\\textit{Recipient of the Denning Family Fellowship in Fine Arts }}
+\cventry{2009--2012}{BFA}{OCAD University}{Toronto, Ontario}{\textit{Integrated Media with minor in Digital Media Studies}}{Graduated on the Dean's honor list. Studies primarily focused on interactive audio/visual site-based installation art.  Other course work included physical computing, computer science, media theory, cultural rhetoric, and rapid-prototyping / manufacturing. \\\textit{Recipient of the OCAD University Medal for Integrated Media }}
+
+% \section{Awards}
+% \cventry{}{OCAD University}{OCAD University Medal in Integrated Media}{May 2012}{}{Top accolade given to one student from each department at time of graduation}
+% \cventry{}{Stanford Arts Institute}{Denning Family Fellowship in Fine Arts
+% }{March 2012}{}{}
+% \cventry{}{OCAD University}{Project 31 Integrated Media Faculty Scholarship
+% }{May 2011}{}{}
+% \cventry{}{OCAD University}{DFI Award}{May 2010}{}{}
+% \cventry{}{OCAD University}{InterAccess Media Prize}{May 2010}{}{}
+
+
+\section{Experience}
+
+\cventry{Fall 2013}{Teaching Assistant}{Stanford University}{Stanford, California}{}{Teaching assistant for Music 250a: Physical Interaction Design for Music.  Responsible for teaching students unix fundamentals, introduction to embedded linux, introduction to arduino, introduction to physical computing and basic sound synthesis using tools such as puredata}
+
+\cventry{Summer 2013}{Lead Front End Developer}{Djz}{San Francisco, California}{}{Designed new development and deployment toolchain for static Angular web application.  Created web based persistent player for desktop and mobile using open source technologies and various apis.\newline{}http://www.djz.com}
+
+\cventry{Summer 2013}{Future Innovation Research and Development}{Cycling 74'}{San Francisco, California}{}{Super secret future product research and development. I can't tell you what it is, but it is pretty cool!.\newline{}http://www.cycling74.com}
+
+\cventry{Summer 2012}{Google Summer of Code 2012 Developer}{Inclusive Design Research Centre}{Toronto, Ontario}{}{Implemented "The Automagic Music Maker" a JavaScript library that offers developers and musicians the ability to generate various types of accessible and responsive instruments in the browser.\newline{}http://www.automagicmusicmaker.com}
+
+\cventry{2010--2012}{Research Assistant}{OCAD University}{Toronto, Ontario}{}{Developed code and interaction design frameworks for various government funded research projects including "Body Editing" and "Bio Mapping" with Paula Gardiner, and "Haptics" with Michael Page.}
+
+\section{Skills}
+\cvitem{Programming}{JavaScript, C, C++, Python, Arduino, Processing, openGL, openCV}
+\cvitem{DSP}{rtaudio, Faust, Matlab, web-audio, Max/MSP, PureData, Chuck}
+\cvitem{Web Technologies}{Node.js, Bower, Grunt, HTML5, Jade, Haml, Less, Sass, CSS}
+\cvitem{Web Frameworks / Libraries}{Angular, Fluid Infusion, jQuery, D3}
+\cvitem{Systems}{LAMP, MEAN, Bash, Vim, Git, Shell Scripting, make, cmake}
+\cvitem{Prototyping}{3D Printing, CNC-Milling, Laser Cutting, Wood/Metal/Plastics shop experience}
+\cvitem{Project Contributor}{Homebrew, Flocking, OSCeleton, npm, Https Everywhere, monome.org}
+
+\end{document}
