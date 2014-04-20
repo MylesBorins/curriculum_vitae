@@ -1,6 +1,6 @@
 ##Curriculum Vitae
 
-Current as of December 2013.
+Current as of April 2014
 
 Adapted from the moderncv default template
 
