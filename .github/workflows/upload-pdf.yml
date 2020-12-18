@@ -1,0 +1,20 @@
+on:
+  push:
+    branches:
+      - main
+
+
+jobs:
+  upload-to-gcs:
+    runs-on: ubuntu-latest
+    environment: gcp
+    steps:
+      - uses: actions/checkout@v2
+      
+      - name: Upload Resume to knis.sh
+        id: upload-file
+        uses: google-github-actions/upload-cloud-storage@main
+        with:
+          credentials: ${{ secrets.gcp_credentials }}
+          path: myles-borins_cv.pdf
+          destination: kni.sh/myles-borins_cv.pdf
