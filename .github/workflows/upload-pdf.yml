@@ -17,4 +17,4 @@ jobs:
         with:
           credentials: ${{ secrets.gcp_credentials }}
           path: myles-borins_cv.pdf
-          destination: kni.sh/myles-borins_cv.pdf
+          destination: kni.sh/
