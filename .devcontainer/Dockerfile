@@ -1,4 +1,4 @@
-// https://github.com/wadedos/alpine-tinytex/blob/master/Dockerfile
+# https://github.com/wadedos/alpine-tinytex/blob/master/Dockerfile
 
 FROM mcr.microsoft.com/devcontainers/base:alpine
 
@@ -13,23 +13,20 @@ RUN apk --no-cache add \
   lua \
   gcc
 
-# add user
-RUN addgroup -S appgroup && adduser -S appuser -G appgroup
-
-# install as appuser
-USER appuser
+# install as vscode
+USER vscode
 
 # setup workdir
-WORKDIR /home/appuser
+WORKDIR /home/vscode
 
 # setup path
-ENV PATH=/home/appuser/.TinyTeX/bin/x86_64-linuxmusl/:$PATH
+ENV PATH=/home/vscode/.TinyTeX/bin/x86_64-linuxmusl/:$PATH
 
 # download and install tinytex
 RUN wget -qO- "https://yihui.name/gh/tinytex/tools/install-unx.sh" | sh
 
 # add tlmgr to path
-RUN /home/appuser/.TinyTeX/bin/*/tlmgr path add
+RUN /home/vscode/.TinyTeX/bin/*/tlmgr path add
 
 # verify latex version
 RUN latex --version
@@ -41,7 +38,14 @@ RUN tlmgr --version
 RUN tlmgr install \
     preview \
     standalone \
-    dvisvgm
+    dvisvgm \
+    moderncv \
+    colortbl \
+    fontawesome5 \
+    pgf \
+    multirow \
+    arydshln \
+    academicons
 
 # verify 
 RUN dvisvgm --version
@@ -52,38 +56,5 @@ RUN mkdir /tmp/test
 # test workdir
 WORKDIR /tmp/test
 
-# copy test latex standalone equation
-COPY ./test.tex .
-
-# temp assign root to clean up tlmgr only dependencies
-USER root
-
-# remove dependencies
-RUN apk del wget xz tar
-
-# reset user
-USER appuser
-
-# run latex - ignore latex errors
-RUN latex -interaction=nonstopmode  ./test.tex || true
-
-# run dvisvgm with no-fonts
-RUN dvisvgm --no-fonts ./test.dvi
-
-# verify no-font svg was generated
-RUN test -f test.svg
-
-# remove no-font svg
-RUN rm test.svg
-
-# run dvisvgm with ttf font
-RUN dvisvgm --font-format=ttf ./test.dvi
-
-# verify ttf font svg was generated
-RUN test -f test.svg
-
-# clean up tests
-RUN rm -R /tmp/*
-
 # reset workdir
-WORKDIR /home/appuser
+WORKDIR /home/vscode
