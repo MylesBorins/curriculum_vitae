@@ -1,5 +1,4 @@
 # https://github.com/wadedos/alpine-tinytex/blob/master/Dockerfile
-
 FROM mcr.microsoft.com/devcontainers/base:alpine
 
 # tinytex dependencies
@@ -22,8 +21,11 @@ WORKDIR /home/vscode
 # setup path
 ENV PATH=/home/vscode/.TinyTeX/bin/x86_64-linuxmusl/:$PATH
 
+# make sure perl is properly installed (e.g., apt install -y perl)
+RUN perl -mFile::Find /dev/null
+
 # download and install tinytex
-RUN wget -qO- "https://yihui.name/gh/tinytex/tools/install-unx.sh" | sh
+RUN wget -qO- "https://yihui.org/tinytex/install-bin-unix.sh" | sh
 
 # add tlmgr to path
 RUN /home/vscode/.TinyTeX/bin/*/tlmgr path add
