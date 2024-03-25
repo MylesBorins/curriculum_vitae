@@ -1,6 +1,6 @@
 ## Curriculum Vitae
 
-Current as of April 2018
+Current as of August 2023
 
 Adapted from the moderncv default template
 
