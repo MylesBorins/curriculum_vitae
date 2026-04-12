@@ -1,62 +1,44 @@
-# https://github.com/wadedos/alpine-tinytex/blob/master/Dockerfile
-FROM mcr.microsoft.com/devcontainers/base:alpine
 
-# tinytex dependencies
-RUN apk --no-cache add \
-  perl  \
+# Updated for Debian base and TeX Live compatibility
+FROM mcr.microsoft.com/devcontainers/base:debian
+
+# Install dependencies
+USER root
+RUN apt-get update && apt-get install -y \
+  perl \
   wget \
-  xz \
+  xz-utils \
   tar \
   fontconfig \
-  freetype \
-  lua \
-  gcc
+  libfreetype6 \
+  lua5.3 \
+  gcc \
+  texlive \
+  texlive-latex-extra \
+  texlive-fonts-recommended \
+  texlive-fonts-extra \
+  texlive-science \
+  texlive-pictures \
+  texlive-xetex \
+  texlive-luatex \
+  # texlive-math-extra (not available in Debian) \
+  texlive-humanities \
+  texlive-lang-all \
+  dvisvgm \
+  latexmk \
+  && rm -rf /var/lib/apt/lists/*
 
-# install as vscode
+# Switch back to vscode user
 USER vscode
 
-# setup workdir
+# Setup workdir
 WORKDIR /home/vscode
 
-# setup path
-ENV PATH=/home/vscode/.TinyTeX/bin/x86_64-linuxmusl/:$PATH
-
-# make sure perl is properly installed (e.g., apt install -y perl)
-RUN perl -mFile::Find /dev/null
-
-# download and install tinytex
-RUN wget -qO- "https://yihui.org/tinytex/install-bin-unix.sh" | sh
-
-# add tlmgr to path
-RUN /home/vscode/.TinyTeX/bin/*/tlmgr path add
-
-# verify latex version
+# Verify latex and dvisvgm
 RUN latex --version
-
-# verify tlmgr version
-RUN tlmgr --version
-
-# install texlive packages
-RUN tlmgr install \
-    preview \
-    standalone \
-    dvisvgm \
-    moderncv \
-    colortbl \
-    fontawesome5 \
-    pgf \
-    multirow \
-    arydshln \
-    academicons
-
-# verify 
 RUN dvisvgm --version
 
-# setup test
+# Setup test
 RUN mkdir /tmp/test
-
-# test workdir
 WORKDIR /tmp/test
-
-# reset workdir
 WORKDIR /home/vscode

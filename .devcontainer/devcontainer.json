@@ -7,7 +7,7 @@
 		"vscode": {
 			"extensions": ["james-yu.latex-workshop"],
 			"settings": {
-				"latex-workshop.latex.recipe.default": "lastUsed"
+				"latex-workshop.latex.recipe.default": "latexmk"
 			}
 		}
 	}

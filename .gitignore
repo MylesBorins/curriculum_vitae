@@ -3,3 +3,6 @@
 *.fls
 *.fdb_latexmk
 *.dvi
+*.xdv
+*.bbl
+*.blg
