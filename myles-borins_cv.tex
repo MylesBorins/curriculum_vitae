@@ -17,10 +17,13 @@
 \moderncvcolor{black}                          % color options 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
 
 % enable scalable fonts
-% \usepackage[T1]{fontenc}
-% \usepackage{lmodern}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
 % adjust the page margins
 \usepackage[scale=0.85]{geometry}
+
+% make bullets solid
+\renewcommand{\labelitemi}{\textbullet}
 
 % personal data
 \firstname{Myles}
@@ -29,7 +32,7 @@
 
 % \mobile{+1~(650)~485~3108}
 \email{myles.borins@gmail.com}
-\homepage{www.mylesborins.com}
+\homepage{mylesborins.com}
 \social[github]{mylesborins}
 \social[linkedin]{mylesborins}
 
@@ -40,6 +43,7 @@
 %-----       resume       ---------------------------------------------------------
 \makecvtitle
 
+\vspace{-0.8em}
 \section{Experience}
 
 \cventry
@@ -49,88 +53,57 @@
   {Toronto, Canada}{}
   {
     \vspace{0.5em}
-    Lead product for Snowflake's Developer Platform, turning a fragmented, high-risk area into a
-    more coherent and strategically aligned platform that leadership can understand, invest in, and
-    execute against. Created Snowflake's governed SDLC model, combining Database Change Management
-    and Snowflake CLI to deliver full inner- and outer-loop coverage that gives teams and AI agents a
-    deterministic way to develop, test, and safely promote changes on Snowflake. Own Snowflake's
-    mission-critical drivers and interfaces, improving the stability and long-term direction of the
-    connectivity layer that underpins how customers use Snowflake through replatforming, incident
-    leadership, vendor strategy, and critical customer escalations.
-    \vspace{1em}
+    \begin{itemize}
+      \item Lead Snowflake's Developer Platform, establishing strategy and execution across a previously fragmented 8-product portfolio of drivers, interfaces, and developer tooling that underpins billions in annual Snowflake revenue.
+      \item Launched Database Change Management to Public Preview as Snowflake's first governed SDLC primitive, designed for humans and AI agents alike; Snowflake objects under management grew 10x in under 3 months.
+      \item Positioned SnowCLI as the nucleus for agentic developer workflows on Snowflake; grew monthly active accounts 265\% year-over-year.
+    \end{itemize}
+    \vspace{0.5em}
   }
 
 \cventry
-  {September 2022 - September 2024}
-  {Director of Product Management}
+  {June 2020 - September 2024}
+  {Staff Product Manager, Open Source $\rightarrow$ Director of Product Management}
   {GitHub}
   {Toronto, Canada}{}
-  {}
-
-\cventry
-  {June 2020 - August 2022}
-  {Staff Product Manager, Open Source}
-  {}
-  {}{}
   {
     \vspace{0.5em}
-    Joined to lead integration of the npm acquisition into GitHub. Became DRI through a period of
-    significant security crises including package takeovers and protestware, driving response across
-    technology, policy, process, and legal. Pioneered mandatory 2FA for highest-impact packages, a
-    model later adopted industry-wide. As Director, expanded scope to
-    Packages and then Codespaces, making Codespaces profitable through architectural improvements.
-    Led the team through early AI disruption, running prototypes and early productization of Copilot
-    Workspaces.
-    \vspace{1em}
+    \begin{itemize}
+      \item Joined as Staff PM to lead npm's integration into GitHub; became DRI for supply chain security, driving response across engineering, policy, and legal during multiple high-profile crises.
+      \item Enforced mandatory 2FA for npm's highest-impact maintainers, achieving 90\%+ adoption across the top 500 packages.
+      \item Promoted to Director; shipped build provenance via Sigstore, later adopted across other language ecosystem registries; expanded scope to Codespaces and drove it to profitability.
+    \end{itemize}
+    \vspace{0.5em}
   }
 
 \cventry
-  {March 2020 - June 2020}
-  {Staff Developer Advocate, Open Source Programs Office}
+  {January 2017 - June 2020}
+  {Developer Advocate $\rightarrow$ Staff Developer Advocate, L4 to L6 in three years}
   {Google}
   {New York City, New York}{}
-  {}
-\cventry
-  {October 2019 - March 2020}
-  {Staff Developer Advocate, Google Cloud Platform}
-  {}
-  {}{}
-  {}
-
-\cventry
-  {April 2018 - September 2019}
-  {Senior Developer Advocate, Google Cloud Platform}
-  {}
-  {}{}
-  {}
-
-\cventry
-  {January 2017 - March 2018}
-  {Developer Advocate, Google Cloud Platform}
-  {}
-  {}{}
   {
     \vspace{0.5em}
-    Promoted twice in three years. Championed Top-Level Await from proposal through TC39 Stage 4, building consensus across browser
-    vendors over 18 months. Co-founded OpenJS Foundation by chairing merger negotiations between
-    Node.js and JS Foundations. Led the ES Modules working group: 42 participants across 10
-    corporations and 3 standards bodies. Shipped ES Modules to Node.js, leading the working group
-    and writing core implementation code. Co-authored the update to the JavaScript IETF mimetype
-    specification.
-    \vspace{1em}
+    \begin{itemize}
+      \item Championed Top-Level Await from proposal through TC39 Stage 4, building consensus across browser vendors over 18 months.
+      \item Co-founded OpenJS Foundation by chairing merger negotiations between Node.js and JS Foundations.
+      \item Founded and chaired the ES Modules working group: 42 participants across 10 corporations and 3 standards bodies.
+      \item Shipped ES Modules to Node.js, writing core implementation code; co-authored the JavaScript IETF mimetype specification.
+    \end{itemize}
+    \vspace{0.5em}
   }
 
-  \cventry
+\cventry
   {October 2015 - January 2017}
   {Advisory Software Engineer, Open Technology}
   {IBM}
   {San Francisco, California}{}
   {
     \vspace{0.5em}
-    Joined without prior Node.js core experience, quickly ramped to contributor, and by end of tenure
-    was leading the Release and LTS process for the project. Built smoke testing suite still used for
-    every Node.js release.
-    \vspace{1em}
+    \begin{itemize}
+      \item Ramped from new contributor to leading the Release and LTS process for Node.js core.
+      \item Built a smoke testing suite still used for every Node.js release.
+    \end{itemize}
+    \vspace{0.5em}
   }
 
 % \cventry
@@ -180,24 +153,27 @@
 
 \cventry
   {2017 - 2024}
-  {TC39 Delegate, Co-Chair (2020), ECMA Vice-President (2019-2020)}
+  {TC39 Delegate | Co-Chair (2020) | ECMA Vice-President (2019-2020)}
   {ECMA International}
   {}{}
-  {}
+  {
+  }
 
 \cventry
   {2019 - 2022}
-  {Board Member: Vice Chair (2019-2020), Platinum Director (Google), Silver Director (GitHub)}
+  {Board Member: Vice Chair (2019-2020), Platinum/Silver Director}
   {OpenJS Foundation}
   {}{}
-  {}
+  {
+  }
 
 \cventry
   {2017 - 2022}
   {Technical Steering Committee Member}
   {Node.js}
   {}{}
-  {}
+  {
+  }
 
 \section{Education}
 
