@@ -33,7 +33,7 @@
 - 45% of all Node.js releases in 2018, then scaled by onboarding 4 new releasers
 - Created OpenJS Foundation (merger of Node.js + JS Foundations), "pivotal to success"
 - Vice-Chair of OpenJS Board, #1 governance committer
-- GCP Node.js revenue grew from zero to a meaningful line in one year (keep directional)
+- Grew GCP Node.js revenue from zero to a meaningful line in one year (keep directional)
 - Peer signal: Chris DiBona (Director): "I thought he didn't have a good chance of pulling it off, but he showed me his mettle"
 - Survey: 61% "Far above expectations", peer wrote "His impact is like that of a 7"
 
@@ -96,26 +96,38 @@
 - **Copilot Workspaces**: GitHub Next built Copilot Workspaces on top of Codespaces infrastructure. User was early adopter, one of first dogfooders, helped with productization strategy, led experiments like "Copilot Workspaces for PRs". Experiments informed today's agentic Copilot features. User did NOT personally make Codespaces the foundation (R&D team did that), but advised.
 - **AI disruption**: Led team through the disruption as LLMs and coding agents emerged
 
-### Snowflake (Oct 2024 - Present, ~18 months as of Apr 2026)
+### Snowflake (Oct 2024 - Present)
 
-**Team scope:** Developer Platform across Driver Ecosystem, Database Change Management, Git Integration, Terraform Provider, REST APIs (SQL + Control Plane), Python API, SnowCLI, SnowSQL. Tools underpin billions in annual revenue.
+**PUBLIC REPO.** This file is public on GitHub. Only publicly announced facts go here: launch dates, partners named on stage, and directional growth. No internal metrics (MAA, objects, credits, ARR, KR targets), headcount, internal people or promo details, pricing analysis, or internal table names. Exact figures live in the private knowledge repos (`~/code/knowledge/snowflake-apps`, `~/code/knowledge/dcm`, `~/code/knowledge/work-log`).
+
+**Snowflake App Runtime (product lead, 2026):** Snowflake's platform for building and hosting web apps next to customer data, with SSO/RBAC and governance built in.
+* Internal preview April 2026; Public Preview announced in the Snowflake Summit keynote (June 2026); GA September 2026. Internal preview to GA in about five months.
+* Summit launch partners: Superblocks, Retool. Myles led product work with launch partners.
+* Adoption: hundreds of monthly active accounts within weeks of GA, met its quarterly adoption goal. Keep growth and revenue directional.
+* Built the App Runtime dashboard on App Runtime itself and an early MCP prototype that fed into Cortex Code CLI support for authenticated MCP servers.
+* Public signals: Summit LinkedIn post, snowflake.com author page, hands-on lab scheduled Oct 27 2026.
+* Took over App Runtime in March 2026 with no users or revenue. Ran the naming process (product name approved May 2026) and wrote its pricing.
+* Public: App Runtime (with Streamlit) mentioned on Snowflake's Sep 2026 earnings call.
+* Vercel deploy integration was rolled back; do not cite Vercel as a partner. Superblocks and Retool were announced at Summit but were not deploy partners; do not call it a partner program.
+* In flight, not resume-safe yet: serverless compute, Workspaces, Postgres integration.
+
+**DCM (Database Change Management):**
+* Created "Database as Code" as a native Snowflake primitive: a prescriptive SDLC with PLAN / ANALYZE / TEST / DEPLOY stages that both humans and AI agents can use safely.
+* Public Preview March 2026; GA August 2026. Myles is manager and sponsor; his PM is the DRI. Credit wording should reflect that.
+* Positioned as Snowflake's agentic sandbox: the safe, object-aware surface where AI agents can propose and dry-run changes before promoting to production.
+
+**Adoption (relative only):** Snowflake CLI overtook SnowSQL in monthly active accounts in 2026. SnowCLI about 4x YoY; other developer tools 1.5x to 4x YoY. These are team outcomes. No large multiples from a small base, no counts.
+
+**Team scope:** Developer Platform: Driver Ecosystem, DCM, Git Integration, Terraform Provider, REST APIs, Python API, SnowCLI, SnowSQL. Tools underpin billions in annual revenue (directional, matches public scale). Myles built the Dev Platform PM team and still leads it. Keep team size off the resume. Dev Platform outcomes (SnowCLI growth, DCM GA, drivers) came through that team: on the resume, use one bullet for building and leading the team and one "Through that team, ..." bullet for outcomes, rather than mixing credit styles per bullet.
 
 **What "previously fragmented" means (for interviews):**
 - No OKRs before Myles joined -- the team had no shared goal-setting or measurement framework
 - 8 product areas operating independently with no unified strategy or portfolio-level coherence
-- This is the honest answer to "what was fragmented and what did you do about it"
-
-**New product launch: DCM (Database Change Management)**
-- Created "Database as Code" as a native Snowflake primitive: a prescriptive SDLC with PLAN / ANALYZE / TEST / DEPLOY stages that both humans and AI agents can use safely.
-- Launched to Public Preview (2026), growing quickly from a near-zero base.
-- Snowflake objects under DCM control grew quickly after launch (keep directional).
-- Positioned as Snowflake's agentic sandbox: the safe, object-aware surface where AI agents can propose and dry-run changes before promoting to production.
-
 
 **Strategic framing:**
-- Authored FY27 Dev Platform strategy (reviewed by leadership). Reframed mandate from "SQL-centric tooling" to "All Builders." Introduced "Building ON vs Building WITH Snowflake" framing.
-- Driving Universal Driver: consolidating 7 independent codebases (Python, JDBC, ODBC, Go, Node, .NET, PHP) onto a single Rust core. The driver layer carries the majority of platform credits. Designing formal LTS program (3-year lifecycle) to give the embedded builder ecosystem a clear, stable upgrade path.
-- CLI Nucleus strategy: making SnowCLI the single authoritative interface for the SDLC in local and CI/CD environments, reducing secure pipeline setup from 120+ minutes to under 5 minutes via Golden Path integrations.
+* Annual strategy docs are table stakes; do not lead with the FY27 strategy on the resume. Lead with the direction it set.
+* Universal Driver: consolidating 7 language drivers onto a single Rust core. Myles wrote the impact and adoption plan and ran ODBC early access himself; delivery is the team's. ODBC 4.0 GA on the shared core Sep 30, 2026 (first driver). Python GA shipped Oct 2026 (confirmed by Myles). JDBC and Node in private preview; Go and .NET likely private preview, unconfirmed.
+* CLI Nucleus: making SnowCLI the single authoritative interface for the SDLC in local and CI/CD environments. Reducing secure pipeline setup from 120+ minutes to under 5 is a target, not a result.
 
 **Still to capture:**
 - Incident leadership specifics (what P0/Sev1 you owned and resolved)
@@ -123,7 +135,8 @@
 - Named customer escalation wins
 
 ## Standards Work
-- TC39: Delegate (2017-Present), Co-Chair (2020), championed Top-Level Await from proposal to Stage 4
+- TC39: Delegate (2017-2024), Co-Chair (2020), championed Top-Level Await from proposal to Stage 4
+- Top-Level Await reached Stage 3 while at Google; Stage 4 came in 2021 after. Resume Google bullet must say Stage 3.
 - ECMA: Vice President (2019-2020), Executive Committee member
 - OpenJS Foundation: Vice Chair (2019-2020), helped found it, chaired merger negotiations, drafted governance
 
